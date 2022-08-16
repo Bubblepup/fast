@@ -26,7 +26,7 @@ export function isTreeItemElement(el: Element): el is HTMLElement {
  * @public
  */
 export type TreeItemOptions = StartEndOptions & {
-    expandCollapseGlyph?: string | SyntheticViewTemplate;
+    expandCollapseIcon?: string | SyntheticViewTemplate;
 };
 
 /**
