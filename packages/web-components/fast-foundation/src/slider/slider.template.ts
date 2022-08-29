@@ -2,6 +2,10 @@ import { ElementViewTemplate, html, ref } from "@microsoft/fast-element";
 import type { FASTSlider } from "./slider.js";
 import type { SliderOptions } from "./slider.options.js";
 
+export const thumbTemplate = html`
+    <div class="thumb"></div>
+`;
+
 /**
  * The template for the {@link @microsoft/fast-foundation#(FASTSlider:class)} component.
  * @public
@@ -41,7 +45,7 @@ export function sliderTemplate<T extends FASTSlider>(
                     style="${x => x.position}"
                 >
                     <slot name="thumb">
-                        ${options.thumb || `<div class="thumb"></div>`}
+                        ${x => options.thumb}
                     </slot>
                 </div>
             </div>

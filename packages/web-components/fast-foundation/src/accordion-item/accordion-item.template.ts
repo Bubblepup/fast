@@ -18,8 +18,8 @@ export function accordionItemTemplate<T extends FASTAccordionItem>(
         >
             ${startSlotTemplate(options)}
             <button
-                class="control"
-                part="control"
+                class="button"
+                part="button"
                 ${ref("expandbutton")}
                 aria-expanded="${x => x.expanded}"
                 aria-controls="${x => x.id}-panel"
