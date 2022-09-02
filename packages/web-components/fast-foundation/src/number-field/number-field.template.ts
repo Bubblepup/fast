@@ -12,7 +12,7 @@ export function numberFieldTemplate<T extends FASTNumberField>(
     return html<T>`
         <label
             part="label"
-            for="input"
+            for="field"
             class="${x =>
                 x.defaultSlottedNodes && x.defaultSlottedNodes.length
                     ? "label"
@@ -23,9 +23,9 @@ export function numberFieldTemplate<T extends FASTNumberField>(
         <div class="control" part="control">
             ${startSlotTemplate(options)}
             <input
-                class="input"
-                part="input"
-                id="input"
+                class="field"
+                part="field"
+                id="field"
                 @input="${x => x.handleTextInput()}"
                 @change="${x => x.handleChange()}"
                 @keydown="${(x, c) => x.handleKeyDown(c.event as KeyboardEvent)}"
@@ -63,7 +63,7 @@ export function numberFieldTemplate<T extends FASTNumberField>(
                 aria-owns="${x => x.ariaOwns}"
                 aria-relevant="${x => x.ariaRelevant}"
                 aria-roledescription="${x => x.ariaRoledescription}"
-                ${ref("input")}
+                ${ref("field")}
             />
             ${when(
                 x => !x.hideStep && !x.readOnly && !x.disabled,
@@ -75,7 +75,7 @@ export function numberFieldTemplate<T extends FASTNumberField>(
                             @click="${x => x.stepUp()}"
                         >
                             <slot name="step-up-icon">
-                                ${options.stepUpIcon || ""}
+                                ${options.stepUpIcon ?? ""}
                             </slot>
                         </div>
                         <div
@@ -84,7 +84,7 @@ export function numberFieldTemplate<T extends FASTNumberField>(
                             @click="${x => x.stepDown()}"
                         >
                             <slot name="step-down-icon">
-                                ${options.stepDownIcon || ""}
+                                ${options.stepDownIcon ?? ""}
                             </slot>
                         </div>
                     </div>

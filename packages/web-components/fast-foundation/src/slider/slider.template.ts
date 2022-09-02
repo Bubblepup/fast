@@ -2,10 +2,6 @@ import { ElementViewTemplate, html, ref } from "@microsoft/fast-element";
 import type { FASTSlider } from "./slider.js";
 import type { SliderOptions } from "./slider.options.js";
 
-export const thumbTemplate = html`
-    <div class="thumb"></div>
-`;
-
 /**
  * The template for the {@link @microsoft/fast-foundation#(FASTSlider:class)} component.
  * @public
@@ -24,7 +20,6 @@ export function sliderTemplate<T extends FASTSlider>(
             aria-disabled="${x => (x.disabled ? true : void 0)}"
             aria-readonly="${x => (x.readOnly ? true : void 0)}"
             aria-orientation="${x => x.orientation}"
-            class="${x => x.orientation}"
         >
             <div part="positioning-region" class="positioning-region">
                 <div ${ref("track")} part="track" class="track">
@@ -45,7 +40,7 @@ export function sliderTemplate<T extends FASTSlider>(
                     style="${x => x.position}"
                 >
                     <slot name="thumb">
-                        ${x => options.thumb}
+                        ${options.thumb ?? `<div class="thumb" part="thumb"></div>`}
                     </slot>
                 </div>
             </div>

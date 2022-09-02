@@ -17,7 +17,7 @@ export function tabsTemplate<T extends FASTTabs>(
                 x => x.showActiveIndicator,
                 html<T>`
                     <div
-                        ${ref("activeIndicatorRef")}
+                        ${ref("activeIndicator")}
                         class="active-indicator"
                         part="active-indicator"
                     ></div>

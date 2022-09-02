@@ -12,7 +12,7 @@ export function textAreaTemplate<T extends FASTTextArea>(
     return html<T>`
         <label
             part="label"
-            for="input"
+            for="field"
             class="${x =>
                 x.defaultSlottedNodes && x.defaultSlottedNodes.length
                     ? "label"
@@ -23,9 +23,9 @@ export function textAreaTemplate<T extends FASTTextArea>(
         <div class="control" part="control">
             ${startSlotTemplate(options)}
             <textarea
-                part="input"
-                class="input"
-                id="input"
+                part="field"
+                class="field"
+                id="field"
                 ?autofocus="${x => x.autofocus}"
                 cols="${x => x.cols}"
                 ?disabled="${x => x.disabled}"
@@ -61,7 +61,7 @@ export function textAreaTemplate<T extends FASTTextArea>(
                 aria-roledescription="${x => x.ariaRoledescription}"
                 @input="${(x, c) => x.handleTextInput()}"
                 @change="${x => x.handleChange()}"
-                ${ref("input")}
+                ${ref("field")}
             ></textarea>
             ${endSlotTemplate(options)}
         </div>
