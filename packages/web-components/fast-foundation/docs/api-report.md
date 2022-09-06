@@ -1860,7 +1860,7 @@ export class FASTSlider extends FormAssociatedSlider implements SliderConfigurat
     // @internal (undocumented)
     stepMultiplier: number;
     // @internal (undocumented)
-    thumbPosition: HTMLDivElement;
+    thumbContainer: HTMLDivElement;
     // @internal (undocumented)
     track: HTMLDivElement;
     // @internal (undocumented)
