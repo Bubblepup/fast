@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 import { fixtureURL } from "../__test__/helpers.js";
 import type { FASTProgress } from "./progress.js";
 
-test.describe("Progress ring", () => {
+test.describe("Progress", () => {
     let page: Page;
     let element: Locator;
     let root: Locator;
