@@ -31,7 +31,7 @@ export function flipperTemplate<T extends FASTFlipper>(
         return existing;
     }
 
-    return html`
+    return html<T>`
         <template
             role="button"
             aria-disabled="${x => (x.disabled ? true : void 0)}"

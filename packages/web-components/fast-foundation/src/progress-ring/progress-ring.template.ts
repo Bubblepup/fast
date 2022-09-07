@@ -6,7 +6,7 @@ import type { ProgressRingOptions } from "./progress-ring.options.js";
 /**
  * @public
  */
-export const progressRingIndicatorTemplate = html<FASTProgressRing>`
+export const progressRingIndicatorTemplate = html`
     <svg viewBox="0 0 16 16" class="progress">
         <circle class="background" part="background" cx="8px" cy="8px" r="7px"></circle>
         <circle class="indicator" part="indicator" cx="8px" cy="8px" r="7px"></circle>

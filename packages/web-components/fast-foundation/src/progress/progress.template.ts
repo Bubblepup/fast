@@ -6,7 +6,7 @@ import type { ProgressOptions } from "./progress.options.js";
 /**
  * @public
  */
-export const progressIndicatorTemplate = html<FASTProgress>`
+export const progressIndicatorTemplate = html`
     <div class="indicator" part="indicator"></div>
 `;
 

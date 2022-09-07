@@ -70,8 +70,7 @@ export function searchTemplate<T extends FASTSearch>(
             />
             <slot name="clear-button">
                 <button
-                    class="clear-button ${x =>
-                        x.value ? "" : "clear-button__hidden"}"
+                    class="clear-button ${x => (x.value ? "" : "clear-button__hidden")}"
                     part="clear-button"
                     tabindex="-1"
                     @click=${x => x.handleClearInput()}

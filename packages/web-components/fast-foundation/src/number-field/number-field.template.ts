@@ -69,11 +69,7 @@ export function numberFieldTemplate<T extends FASTNumberField>(
                 x => !x.hideStep && !x.readOnly && !x.disabled,
                 html<T>`
                     <div class="step-buttons" part="step-buttons">
-                        <div
-                            class="step-up"
-                            part="step-up"
-                            @click="${x => x.stepUp()}"
-                        >
+                        <div class="step-up" part="step-up" @click="${x => x.stepUp()}">
                             <slot name="step-up-icon">
                                 ${options.stepUpIcon ?? ""}
                             </slot>
