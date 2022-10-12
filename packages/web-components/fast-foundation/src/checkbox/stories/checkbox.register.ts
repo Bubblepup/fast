@@ -94,7 +94,9 @@ const styles = css`
         cursor: var(--disabled-cursor);
     }
 
-    :host([aria-checked="true"]:not([data-indeterminate])) slot[name="checked-indicator"] *,
+    :host([aria-checked="true"]:not([data-indeterminate]))
+        slot[name="checked-indicator"]
+        *,
     :host([data-indeterminate]) slot[name="indeterminate-indicator"] * {
         opacity: 1;
     }
