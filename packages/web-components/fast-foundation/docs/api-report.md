@@ -1704,6 +1704,7 @@ export interface FASTSearch extends StartEnd, DelegatesARIASearch {
 //
 // @public
 export class FASTSelect extends FormAssociatedSelect {
+    cleanup: () => void;
     // @internal
     clickHandler(e: MouseEvent): boolean | void;
     // @internal
