@@ -1,4 +1,4 @@
-import { html, repeat } from "@microsoft/fast-element";
+import { html } from "@microsoft/fast-element";
 import type { Meta, Story, StoryArgs } from "../../__test__/helpers.js";
 import { renderComponent } from "../../__test__/helpers.js";
 import type { FASTTreeItem } from "../tree-item.js";
@@ -43,15 +43,4 @@ TreeItemWithIcons.args = {
         Tree Item
         <svg width="20" height="20" slot="end"><use href="#test-icon-2" /></svg>
     `,
-};
-
-export const TreeItemWithNestedItems: Story<FASTTreeItem> = TreeItem.bind({});
-TreeItemWithNestedItems.args = {
-    storyContent: html`
-        Tree Item ${repeat(x => x.storyItems, storyTemplate)}
-    `,
-    storyItems: [
-        { storyContent: "Nested Tree Item" },
-        { storyContent: "Nested Tree Item" },
-    ],
 };

@@ -60,7 +60,7 @@ const styles = css`
         padding-inline-start: 10px;
     }
 
-    :host(.nested) .control {
+    :host([nested]) .control {
         padding-inline-start: calc(
             10px + var(--expand-collapse-button-size) + var(--tree-item-nested-width, 0px)
         );
