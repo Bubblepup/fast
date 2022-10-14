@@ -15,7 +15,6 @@ const styles = css`
         border: calc(var(--focus-stroke-width) * 1px) solid transparent;
         box-sizing: border-box;
         color: var(--neutral-foreground-rest);
-        contain: layout;
         cursor: pointer;
         display: grid;
         fill: currentcolor;
@@ -35,8 +34,6 @@ const styles = css`
     :host(:hover) {
         background: var(--neutral-fill-stealth-hover);
         color: var(--neutral-foreground-rest);
-        position: relative;
-        z-index: 1;
     }
 
     :host(:active) {
@@ -257,12 +254,18 @@ const styles = css`
         display: block;
         pointer-events: none;
     }
+
+    .submenu-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
 `;
 
 FASTMenuItem.define({
     name: "fast-menu-item",
     template: menuItemTemplate({
-        anchoredRegion: "fast-anchored-region",
         checkboxIndicator: /* html */ `
             <svg
                 part="checkbox-indicator"
